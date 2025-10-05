@@ -1,85 +1,68 @@
-Project: Uber Supply–Demand Gap 📊
+🚗 Uber Supply–Demand Gap Analysis 📊
 
-This project quantifies unfulfilled ride requests and pinpoints peak gap windows using SQL outputs, an Excel dashboard, and a reproducible Pandas notebook.
+This project analyzes ride request patterns to quantify unfulfilled demand and pinpoint peak gap windows, using a combination of SQL, Excel, and Python (Pandas).
 
+🗂️ Dataset
 
--Dataset
+Source: 🔗 Google Drive (Public Dataset)
 
-Source: [https://drive.google.com/file/d/1-d9ukSpbLJDdISdIq-xlujTKh1IzR66n/view?usp=sharing🔗] (public dataset provided with the assignment).
+🎯 Objectives
 
+📈 Measure total ride requests, unfulfilled counts, and unfulfilled % across different time granularities.
 
--Objectives
+🕐 Identify hours and dayparts where the demand–supply gap peaks to improve driver allocation strategy.
 
-Measure total requests, unfulfilled count, and unfulfilled percentage across time granularities.
+⚙️ Tech Stack
+Tool	Purpose
+🧮 SQL	Hour/daypart extractions
+📊 Microsoft Excel	Dashboard KPIs & visualizations
+🐍 Python (Pandas, Matplotlib, Seaborn)	KPI automation & ranked insights
+🗃️ Folder Structure
+Uber-Supply-Demand-Gap/
+│
+├── data_raw/            → hour_level.csv, daypart_status.csv, pickup_daypart_gap.csv  
+├── notebooks/           → Uber_Supply_Demand_Gap_Pandas.ipynb  
+├── outputs/             → kpis_summary.csv  
+└── reports/             → Uber-Supply-Demand-Gap-Dashboard.pdf  
 
-Identify hours and dayparts where the gap peaks to guide driver allocation.
+📊 Key KPIs
+Metric	Value
+🚘 Total Requests	6,745
+❌ Unfulfilled (Count)	3,914
+⚠️ Unfulfilled (%)	58.0%
+📈 Dashboard Visuals (Excel)
 
+🕒 Hourly Requests vs Unfulfilled % → Bar + Line (Secondary axis 0–100%)
 
--Tech stack
+📍 Pickup × Daypart: Unfulfilled (Airport ✈️ vs City 🏙️)
 
-SQL for hour/daypart extracts.
+⏰ Daypart × Status (Counts) → Stacked visualization
 
-Microsoft Excel for dashboard KPIs and visuals.
+💡 Insights
 
-Python (pandas, matplotlib, seaborn) for reproducible KPIs and ranked text insights.
+🌆 Evening (18–21 hrs) → Highest City-side unfulfilled; recommend shifting more drivers to City.
 
+🌅 Morning (6–9 hrs) → Higher Airport-side unfulfilled; prioritize Airport pickups during this window.
 
--Folder structure
+🧠 Reproduce with Pandas
 
-data_raw/ → hour_level.csv, daypart_status.csv, pickup_daypart_gap.csv (exported from SQL).
+Open notebooks/Uber_Supply_Demand_Gap_Pandas.ipynb
 
-notebooks/ → Uber_Supply_Demand_Gap_Pandas.ipynb.
+Run the data load & mapping cells for the three CSVs
 
-outputs/ → kpis_summary.csv.
+Execute the final “KPIs + Insights” cell → generates kpis_summary.csv
 
-reports/ → Uber-Supply-Demand-Gap-Dashboard.pdf.
+🧾 Note: Notebook shows text outputs only; visuals are available in the Excel PDF dashboard.
 
+📄 How to View
 
+Open 👉 reports/Uber-Supply-Demand-Gap-Dashboard.pdf for the final dashboard and analysis view.
 
--Key KPIs
+⚖️ License
 
-Total Requests: 6745.
+MIT License – Free to use, modify, and share.
 
-Unfulfilled (count): 3914.
+❤️ Credits
 
-Unfulfilled (%): 58.0%.
-
-
-
--Dashboard visuals (Excel)
-
-Hourly Requests vs Unfulfilled % (bars + line, secondary axis 0–100%).
-
-Pickup × Daypart: Unfulfilled (Airport vs City).
-
-Daypart × Status (Counts) stacked.
-
-
-
--Insights 💡
-
-Evening shows highest City‑side unfulfilled; shift supply toward City during 18–21 hrs.
-
-Morning/Early Morning has higher Airport unfulfilled; prioritize Airport between 6–9 hrs.
-
-
--Reproduce with Pandas 🐍
-
-Open the notebook, run the load/mapping cell for the three CSVs, then run the final “KPIs + insights” cell to generate kpis_summary.csv.
-
-Notebook is text‑only for outputs; visuals are presented in the Excel PDF dashboard.
-
-
--How to view 📄
-
-Open reports/Uber-Supply-Demand-Gap-Dashboard.pdf for the final dashboard view.
-
-
--License
-
-MIT (update if needed).
-
-
--Credits
-
-Made by Yashvi Verma ❤️.
+Made with dedication by Yashvi Verma
+ 💻✨
